@@ -1,4 +1,4 @@
-# Structure software course
+# software Structure course
 
 Shortest path of 2 points exercise.
 
