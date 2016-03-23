@@ -17,5 +17,11 @@ The open-source we used:
 http://algs4.cs.princeton.edu/44sp/
 
 
+# Authors :
+Idan Nahmias 
+Aviv Levanon 
+Maria Vinogradov
+
+
 
 
