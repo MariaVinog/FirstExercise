@@ -18,22 +18,12 @@
  *
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
- *  
  */
-
-/******************************************************************************
- * . EdgeWeightedDigraph מחלקה שמייצגת צלע מכוון עם משקל במחלקה 
- * .מחלקה לא ניתנת לשינוי
- *   לכל צלע יש 2 נקודות (integers) 
- *   ומשקל.
- *   מבנה הנתונים מאפשר גישה לערך הנקודות והמשקל.
- *   v -> w
- ******************************************************************************/
 
 public class DirectedEdge { 
     private final int v;
     private final int w;
-    private final double weight;
+    private double weight;
 
     /**
      * Initializes a directed edge from vertex <tt>v</tt> to vertex <tt>w</tt> with
@@ -77,6 +67,14 @@ public class DirectedEdge {
     public double weight() {
         return weight;
     }
+    
+    
+    //------------------
+    public void Setweight(double x ) {
+    	weight = x ;
+    }
+    //--------------------
+
 
     /**
      * Returns a string representation of the directed edge.
@@ -86,11 +84,6 @@ public class DirectedEdge {
         return v + "->" + w + " " + String.format("%5.2f", weight);
     }
 
-    /**
-     * Unit tests the <tt>DirectedEdge</tt> data type.
-     */
-    public static void main(String[] args) {
-        DirectedEdge e = new DirectedEdge(12, 34, 5.67);
-        System.out.println(e.toString());
-    }
+
+  
 }
