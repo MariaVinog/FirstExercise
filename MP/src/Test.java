@@ -12,7 +12,7 @@ public class Test {
 		
 		try {
 		FileReader fr1 = new FileReader("ans1 - Copy.txt");
-		FileReader fr2 = new FileReader("ans1.txt");
+		FileReader fr2 = new FileReader("ans.txt");
 		BufferedReader br1 = new BufferedReader(fr1);
 		BufferedReader br2 = new BufferedReader(fr2);
 		String l1,l2;
