@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -19,61 +19,7 @@ import java.util.Scanner;
 /**
  * @author Most601
  */
-public class TestAlgo {
 
-	public static void main(String[] args) {
-		String TestFile = "test1.txt";
-		String AnsFile = "ans.txt";
-		String GraphFile = "tinyEWD.txt";
-		OurIn in = new OurIn(TestFile);
-		OurIn GFile = new OurIn(GraphFile);
-		Graph G = new Graph(GFile);
-
-		int count = 0;
-		
-		long start = System.currentTimeMillis();
-
-		try {
-		
-			PrintWriter outStream = new PrintWriter(AnsFile);
-			
-			int NumOfQueriesin = Integer.parseInt(in.readLine());
-			outStream.println(NumOfQueriesin);
-			while((in.hasNextLine()) && (count < NumOfQueriesin)){
-				int From = in.readInt();
-				int To = in.readInt();
-				int NumOfBP = in.readInt();
-				outStream.print(From+" "+To+" "+NumOfBP+" ");
-
-				int ArrayOfBP[] = new int[NumOfBP];
-				for(int i = 0; i < NumOfBP; i++ ){
-					ArrayOfBP[i] = in.readInt();
-					outStream.print(ArrayOfBP[i]+" ");
-				}
-				G.BLIn(ArrayOfBP , NumOfBP);
-				Graph_algo sp1 = new Graph_algo(G, From);
-
-				if (sp1.hasPathTo(To) && sp1.distTo(To) < 100 ) {
-					outStream.print(sp1.distTo(To));
-				}
-				else {
-					outStream.print("inf");
-				}
-				outStream.print("\n");
-				G.BLOut();
-				count++;
-			}
-			
-
-			outStream.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-
-
-        long end = System.currentTimeMillis();
-        System.out.println("Selection Sort time = " + (end-start)/1000. + " seconds");
-=======
 /**
  * The TestAlgo class represents a test for the shortest path from begin vertex to end vertex
  * by using the Dijkstra algorithm.
@@ -206,6 +152,7 @@ public class TestAlgo {
 			outStream.print("inf");
 		}
 		outStream.print("\n");
->>>>>>> branch 'master' of https://github.com/MariaVinog/FirstExercise.git
+
 	}
 }
+
