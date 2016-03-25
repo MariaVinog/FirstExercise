@@ -7,13 +7,10 @@
  *
  ******************************************************************************/
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
-
 /**
  *  The <tt>EdgeWeightedDigraph</tt> class represents a edge-weighted
  *  digraph of vertices named 0 through <em>V</em> - 1, where each
@@ -44,14 +41,12 @@ public class Graph {
 	private int E;                      // number of edges in this digraph
 	private Bag<DirectedEdge>[] adj;    // adj[v] = adjacency list for vertex v
 	private int[] indegree;             // indegree[v] = indegree of vertex v
-
-
+	
 	//**********************************************************
 	private Queue<Double> q = new LinkedList<Double>();
 	//private ArrayList<Integer> num;
 	private int[] Array;
 	//**********************************************************
-
 
 	//**********************************************************    
 	public void BLIn (int[] Array1 , int NumOfBP){
@@ -60,7 +55,7 @@ public class Graph {
 			this.Array[i] = Array1[i];
 			Bag<DirectedEdge> B = adj[Array1[i]];
 			Iterator<DirectedEdge> It = B.iterator();
-			for (int j = 0; It.hasNext() == true ; j++) {
+			while(It.hasNext()){
 				DirectedEdge e = It.next();
 				q.add(e.weight());
 				e.Setweight(Double.MAX_VALUE);
@@ -74,20 +69,20 @@ public class Graph {
 		for (int i = 0; i < this.Array.length; i++) {
 			Bag<DirectedEdge> B = adj[this.Array[i]];
 			Iterator<DirectedEdge> It = B.iterator();
-			for (int j = 0; It.hasNext() == true ; j++) {
+			while(It.hasNext()){
 				DirectedEdge e = (DirectedEdge)It.next();
 				e.Setweight(q.poll());
 			}
 		}
 	}
 	//**********************************************************  
-
 	/**
 	 * Initializes an empty edge-weighted digraph with <tt>V</tt> vertices and 0 edges.
 	 *
 	 * @param  V the number of vertices
 	 * @throws IllegalArgumentException if <tt>V</tt> < 0
 	 */
+	@SuppressWarnings("unchecked")
 	public Graph(int V) {
 		if (V < 0) throw new IllegalArgumentException("Number of vertices in a Digraph must be nonnegative");
 		this.V = V;
@@ -97,27 +92,6 @@ public class Graph {
 		for (int v = 0; v < V; v++)
 			adj[v] = new Bag<DirectedEdge>();
 	}
-
-	/**
-	 * Initializes a random edge-weighted digraph with <tt>V</tt> vertices and <em>E</em> edges.
-	 *
-	 * @param  V the number of vertices
-	 * @param  E the number of edges
-	 * @throws IllegalArgumentException if <tt>V</tt> < 0
-	 * @throws IllegalArgumentException if <tt>E</tt> < 0
-	 */
-
-	//    public EdgeWeightedDigraph(int V, int E) {
-	//        this(V);
-	//        if (E < 0) throw new IllegalArgumentException("Number of edges in a Digraph must be nonnegative");
-	//        for (int i = 0; i < E; i++) {
-	//            int v = StdRandom.uniform(V);
-	//            int w = StdRandom.uniform(V);
-	//            double weight = .01 * StdRandom.uniform(100);
-	//            DirectedEdge e = new DirectedEdge(v, w, weight);
-	//            addEdge(e);
-	//        }
-	//    }
 
 	/**  
 	 * Initializes an edge-weighted digraph from the specified input stream.
@@ -280,8 +254,4 @@ public class Graph {
 		}
 		return s.toString();
 	}
-
-
-	
-
 }

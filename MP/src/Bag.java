@@ -98,8 +98,6 @@ public class Bag<Item> implements Iterable<Item> {
         first.next = oldfirst;
         N++;
     }
-
-
     /**
      * Returns an iterator that iterates over the items in this bag in arbitrary order.
      *
@@ -127,9 +125,5 @@ public class Bag<Item> implements Iterable<Item> {
             return item;
         }
     }
-
-
-    
-
 
 }

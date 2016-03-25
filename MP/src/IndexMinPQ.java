@@ -52,7 +52,8 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
      *         <tt>maxN - 1</tt>
      * @throws IllegalArgumentException if <tt>maxN</tt> &lt; <tt>0</tt>
      */
-    public IndexMinPQ(int maxN) {
+    @SuppressWarnings("unchecked")
+	public IndexMinPQ(int maxN) {
         if (maxN < 0) throw new IllegalArgumentException();
         this.maxN = maxN;
         keys = (Key[]) new Comparable[maxN + 1];    // make this of length maxN??
@@ -319,6 +320,4 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
             return copy.delMin();
         }
     }
-
-
 }
