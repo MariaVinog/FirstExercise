@@ -15,9 +15,14 @@ public class Test {
 
 		TestAlgo new_test = new TestAlgo(TestFile,GraphFile,AnsFile);
 		new_test.RunFile();
-
-		while((new_test.in.hasNextLine()) && (Boaz_file.hasNextLine())){
-			assertEquals(new_test.in.readLine(),Boaz_file.readLine()); 
+		
+		OurIn ToTest = new OurIn(AnsFile);
+		
+		assertEquals(ToTest.readLine(),Integer.toString(Boaz_file.readInt()));
+		Boaz_file.readLine();
+		
+		while((ToTest.hasNextLine()) && (Boaz_file.hasNextLine())){
+			assertEquals(ToTest.readLine(),Boaz_file.readLine()); 
 		}
 	}
 
@@ -31,17 +36,17 @@ public class Test {
 
 		TestAlgo new_test = new TestAlgo(TestFile,GraphFile,AnsFile);
 		new_test.RunFile();
+		
+		OurIn ToTest = new OurIn(AnsFile);
+		assertEquals(ToTest.readLine(),Integer.toString(Boaz_file.readInt()));
+		Boaz_file.readLine();
 
-		while((new_test.in.hasNextLine()) && (Boaz_file.hasNextLine())){
-			assertEquals(new_test.in.readLine(),Boaz_file.readLine()); 
+		while((ToTest.hasNextLine()) && (Boaz_file.hasNextLine())){
+			assertEquals(ToTest.readLine(),Boaz_file.readLine()); 
 		}
 	}
 	
 	@org.junit.Test
-
-
-			
-
 	public void Test_mediumEWD_test3() {
 
 		OurIn Boaz_file = new OurIn("Solution_test3.txt_mediumEWD.txt_1458310286550_.txt");
@@ -52,9 +57,12 @@ public class Test {
 		TestAlgo new_test = new TestAlgo(TestFile,GraphFile,AnsFile);
 		new_test.RunFile();
 
-		while((new_test.in.hasNextLine()) && (Boaz_file.hasNextLine())){
-			assertEquals(new_test.in.readLine(),Boaz_file.readLine()); 
+		OurIn ToTest = new OurIn(AnsFile);
+		assertEquals(ToTest.readLine(),Integer.toString(Boaz_file.readInt()));
+		Boaz_file.readLine();
 
+		while((ToTest.hasNextLine()) && (Boaz_file.hasNextLine())){
+			assertEquals(ToTest.readLine(),Boaz_file.readLine()); 
 		}
 	}
 	
@@ -65,12 +73,16 @@ public class Test {
 		String TestFile = "test3.txt";
 		String AnsFile = "ans.txt";
 		String GraphFile = "largeEWD.txt";
-
+		
 		TestAlgo new_test = new TestAlgo(TestFile,GraphFile,AnsFile);
 		new_test.RunFile();
 
-		while((new_test.in.hasNextLine()) && (Boaz_file.hasNextLine())){
-			assertEquals(new_test.in.readLine(),Boaz_file.readLine()); 
+		OurIn ToTest = new OurIn(AnsFile);
+		assertEquals(ToTest.readLine(),Integer.toString(Boaz_file.readInt()));
+		Boaz_file.readLine();
+
+		while((ToTest.hasNextLine()) && (Boaz_file.hasNextLine())){
+			assertEquals(ToTest.readLine(),Boaz_file.readLine()); 
 		}
 	}
 
