@@ -135,7 +135,7 @@ public class TestAlgo {
 	private void PrintAnsToFile(){
 		
 		
-	    if (this.New_G_algo.hasPathTo(this.getVertexTo()) && this.New_G_algo.distTo(this.getVertexTo()) < 100 ) {
+	    if (this.New_G_algo.hasPathTo(this.getVertexTo()) && this.New_G_algo.distTo(this.getVertexTo()) < Double.MAX_VALUE ) {
 			outStream.print(this.New_G_algo.distTo(this.getVertexTo()));
 		}
 		else {
