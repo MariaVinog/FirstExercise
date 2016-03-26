@@ -1,15 +1,5 @@
 
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,7 +7,7 @@ import java.util.Scanner;
  */
 
 /**
- * @author Most601
+ * @author Most601 mariavinogradov aviv
  */
 
 /**
@@ -28,8 +18,7 @@ import java.util.Scanner;
  * 2.open the test file(text) with paths to test.
  * 3.run the algorithm on each path.
  * 5.print the answers to answer file(text).
- * 
- * @author mariavinogradov
+ *
  *
  */
 public class TestAlgo {
@@ -144,8 +133,9 @@ public class TestAlgo {
 	 * This function printing the final answer to the AnsFile file.
 	 */
 	private void PrintAnsToFile(){
-
-		if (this.New_G_algo.hasPathTo(this.getVertexTo()) && this.New_G_algo.distTo(this.getVertexTo()) < 100 ) {
+		
+		
+	    if (this.New_G_algo.hasPathTo(this.getVertexTo()) && this.New_G_algo.distTo(this.getVertexTo()) < 100 ) {
 			outStream.print(this.New_G_algo.distTo(this.getVertexTo()));
 		}
 		else {

@@ -1,5 +1,8 @@
 import static org.junit.Assert.*;
 
+/**
+ * @author Most601 mariavinogradov aviv
+ */
 public class Test {
 
 	@org.junit.Test
