@@ -64,7 +64,22 @@ public class Test {
 		OurIn Boaz_file = new OurIn("Solution_test3.txt_largeEWD.txt_1458309223268_.txt");
 		String TestFile = "test3.txt";
 		String AnsFile = "ans.txt";
-		String GraphFile = "largeEWD.txt";
+		String GraphFile = "tinyEWD3.txt";
+
+		TestAlgo new_test = new TestAlgo(TestFile,GraphFile,AnsFile);
+		new_test.RunFile();
+
+		while((new_test.in.hasNextLine()) && (Boaz_file.hasNextLine())){
+			assertEquals(new_test.in.readLine(),Boaz_file.readLine()); 
+		}
+	}
+	@org.junit.Test
+	public void Test_tinyEWD3_test_4() {
+
+		OurIn Boaz_file = new OurIn("Solution_test4.txt_tinyEWD3.txt");
+		String TestFile = "test_4.txt";
+		String AnsFile = "ans.txt";
+		String GraphFile = "tinyEWD3.txt";
 
 		TestAlgo new_test = new TestAlgo(TestFile,GraphFile,AnsFile);
 		new_test.RunFile();
