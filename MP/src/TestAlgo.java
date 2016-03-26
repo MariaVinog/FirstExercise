@@ -91,13 +91,14 @@ public class TestAlgo {
 		this.setNumOftests(Integer.parseInt(in.readLine()));
 		this.outStream.println(this.getNumOftests());
 
+		this.start = System.currentTimeMillis();
 		while(in.hasNextLine()){
 			this.setVertexFrom(in.readInt());
 			this.setVertexTo(in.readInt());
 			this.setNumOfBP(in.readInt());
 
 			this.PrintToFile();
-			this.start = System.currentTimeMillis();
+			
 			this.Test_Algo();
 
 		}
