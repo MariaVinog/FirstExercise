@@ -85,5 +85,25 @@ public class Test {
 			assertEquals(ToTest.readLine(),Boaz_file.readLine()); 
 		}
 	}
+	@org.junit.Test
+	public void Test_tinyEWD2_test4() {
+		
+		OurIn Boaz_file = new OurIn("Solution_test4.txt_tinyEWD2.txt");
+		String TestFile = "test4.txt";
+		String AnsFile = "ans.txt";
+		String GraphFile = "tinyEWD2.txt";
+
+		TestAlgo new_test = new TestAlgo(TestFile,GraphFile,AnsFile);
+		new_test.RunFile();
+		
+		OurIn ToTest = new OurIn(AnsFile);
+		
+		assertEquals(ToTest.readLine(),Integer.toString(Boaz_file.readInt()));
+		Boaz_file.readLine();
+		
+		while((ToTest.hasNextLine()) && (Boaz_file.hasNextLine())){
+			assertEquals(ToTest.readLine(),Boaz_file.readLine()); 
+		}
+	}
 
 }
