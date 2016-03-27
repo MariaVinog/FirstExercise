@@ -23,6 +23,9 @@ import java.io.PrintWriter;
  *
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
+ *  
+ * We deleted the function that we don't need.
+ *  
  */
 public class OurOut {
 

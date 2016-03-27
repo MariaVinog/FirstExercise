@@ -41,7 +41,7 @@ import java.util.Scanner;
  *  @author Kevin Wayne
  *  
  *  
- *We deleted the function that we don't need.
+ * We deleted the function that we don't need.
  *  
  */
 public final class OurIn {
