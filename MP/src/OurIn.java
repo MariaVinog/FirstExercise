@@ -39,6 +39,10 @@ import java.util.Scanner;
  *  @author David Pritchard
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
+ *  
+ *  
+ *We deleted the function that we don't need.
+ *  
  */
 public final class OurIn {
     
@@ -111,6 +115,4 @@ public final class OurIn {
         }
         return line;
     }
- 
-
 }
