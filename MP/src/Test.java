@@ -105,5 +105,51 @@ public class Test {
 			assertEquals(ToTest.readLine(),Boaz_file.readLine()); 
 		}
 	}
+	
+	@org.junit.Test
+	public void BLIn() {
+		
+		OurIn file = new OurIn("tinyEWD.txt");
+		Graph G = new Graph(file);
+		int NumOfBP = 2 ;
+		int []BL = new int[NumOfBP];
+		
+		BL[0] = 2 ;
+		BL[1] = 7 ;
+		G.BLIn(BL, NumOfBP);
+		for (int i = 0; i < BL.length; i++) {
+			Iterator<DirectedEdge> It = G.adj(BL[i]).iterator();
+			while(It.hasNext()){
+				DirectedEdge e = It.next();
+				assertTrue(e.weight() == Double.MAX_VALUE);
+			}
+		}
+		
+		
+	}
+
+	@org.junit.Test
+	public void BLOut() {
+		
+		OurIn file = new OurIn("tinyEWD.txt");
+		Graph G = new Graph(file);
+		int NumOfBP = 2 ;
+		int []BL = new int[NumOfBP];
+		
+		BL[0] = 2 ;
+		BL[1] = 7 ;
+		G.BLIn(BL, NumOfBP);
+	
+		G.BLOut();
+		for (int i = 0; i < BL.length; i++) {
+			Iterator<DirectedEdge> It = G.adj(BL[i]).iterator();
+			while(It.hasNext()){
+				DirectedEdge e = It.next();
+				assertTrue(e.weight() != Double.MAX_VALUE);
+			}
+		}
+		
+		
+	}
 
 }
