@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.util.Iterator;
+
 /**
  * @author Most601 mariavinogradov aviv
  */
@@ -124,8 +126,6 @@ public class Test {
 				assertTrue(e.weight() == Double.MAX_VALUE);
 			}
 		}
-		
-		
 	}
 
 	@org.junit.Test
@@ -148,8 +148,5 @@ public class Test {
 				assertTrue(e.weight() != Double.MAX_VALUE);
 			}
 		}
-		
-		
 	}
-
 }
