@@ -42,13 +42,19 @@ public class Graph {
 	private Bag<DirectedEdge>[] adj;    // adj[v] = adjacency list for vertex v
 	private int[] indegree;             // indegree[v] = indegree of vertex v
 	
+	//Variables we added.
 	//**********************************************************
-	private Queue<Double> q = new LinkedList<Double>();
-	//private ArrayList<Integer> num;
-	private int[] Array;
+	private Queue<Double> q = new LinkedList<Double>(); //Queue that save the original weights of all the directed edges.
+	private int[] Array; //this-> Array with black points.
 	//**********************************************************
 
-	//**********************************************************    
+	/**
+	 *  Function that we added.
+	 *  The function saving the original weight of all the directed edges in a queue
+	 *  and changes the weights to Double.MAX_VALUE.
+	 * @param Array1 - array with black points.
+	 * @param NumOfBP - number of black points.
+	 */
 	public void BLIn (int[] Array1 , int NumOfBP){
 		this.Array = new int [NumOfBP];
 		for (int i = 0; i < NumOfBP; i++) {
@@ -62,9 +68,11 @@ public class Graph {
 			}
 		}
 	}
-	//**********************************************************  
-
-	//**********************************************************  
+	/**
+	 * Function that we added.
+	 * The function returns the original weights of all the directed edges.
+	 * (the weights that saved in the queue).
+	 */
 	public void BLOut (){
 		for (int i = 0; i < this.Array.length; i++) {
 			Bag<DirectedEdge> B = adj[this.Array[i]];
@@ -75,7 +83,6 @@ public class Graph {
 			}
 		}
 	}
-	//**********************************************************  
 	/**
 	 * Initializes an empty edge-weighted digraph with <tt>V</tt> vertices and 0 edges.
 	 *
@@ -92,7 +99,6 @@ public class Graph {
 		for (int v = 0; v < V; v++)
 			adj[v] = new Bag<DirectedEdge>();
 	}
-
 	/**  
 	 * Initializes an edge-weighted digraph from the specified input stream.
 	 * The format is the number of vertices <em>V</em>,
@@ -117,7 +123,6 @@ public class Graph {
 			addEdge(new DirectedEdge(v, w, weight));
 		}
 	}
-
 	/**
 	 * Initializes a new edge-weighted digraph that is a deep copy of <tt>G</tt>.
 	 *
@@ -139,7 +144,6 @@ public class Graph {
 			}
 		}
 	}
-
 	/**
 	 * Returns the number of vertices in this edge-weighted digraph.
 	 *
@@ -163,7 +167,6 @@ public class Graph {
 		if (v < 0 || v >= V)
 			throw new IndexOutOfBoundsException("vertex " + v + " is not between 0 and " + (V-1));
 	}
-
 	/**
 	 * Adds the directed edge <tt>e</tt> to this edge-weighted digraph.
 	 *
@@ -179,8 +182,6 @@ public class Graph {
 		indegree[w]++;
 		E++;
 	}
-
-
 	/**
 	 * Returns the directed edges incident from vertex <tt>v</tt>.
 	 *
@@ -192,7 +193,6 @@ public class Graph {
 		validateVertex(v);
 		return adj[v];
 	}
-
 	/**
 	 * Returns the number of directed edges incident from vertex <tt>v</tt>.
 	 * This is known as the <em>outdegree</em> of vertex <tt>v</tt>.
@@ -205,7 +205,6 @@ public class Graph {
 		validateVertex(v);
 		return adj[v].size();
 	}
-
 	/**
 	 * Returns the number of directed edges incident to vertex <tt>v</tt>.
 	 * This is known as the <em>indegree</em> of vertex <tt>v</tt>.
@@ -218,7 +217,6 @@ public class Graph {
 		validateVertex(v);
 		return indegree[v];
 	}
-
 	/**
 	 * Returns all directed edges in this edge-weighted digraph.
 	 * To iterate over the edges in this edge-weighted digraph, use foreach notation:
@@ -235,7 +233,6 @@ public class Graph {
 		}
 		return list;
 	} 
-
 	/**
 	 * Returns a string representation of this edge-weighted digraph.
 	 *

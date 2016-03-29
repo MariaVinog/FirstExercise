@@ -1,11 +1,3 @@
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * @author Most601 mariavinogradov aviv
  */
@@ -18,8 +10,6 @@
  * 2.open the test file(text) with paths to test.
  * 3.run the algorithm on each path.
  * 5.print the answers to answer file(text).
- *
- *
  */
 public class TestAlgo {
 
@@ -29,11 +19,12 @@ public class TestAlgo {
 	private int NumOfBP;//number of black point
 	private int[] ArrayOfBP;//Array with black points.
 
-	private Graph G;
-	private OurIn GFile;
-	private OurOut outStream;
-	public  OurIn in;
-	private Graph_algo New_G_algo;
+	private OurIn GFile;//File that represents a graph.
+	public  OurIn in;//File to read from , file with tests.
+	private OurOut outStream;//Answer file , file to print in.
+	
+	private Graph G;//Graph that built from GFile.
+	private Graph_algo New_G_algo;//Run the Dijkstra algorithm.
 
 	//****RunTime*****
 	private long start;
@@ -41,30 +32,57 @@ public class TestAlgo {
 
 	//***Getters and Setters****
 
+    /**
+     * @return - the tail vertex of the directed edge.
+     */
 	public int getVertexFrom() {
 		return vertexFrom;
 	}
+	/**
+	 * @return - the head vertex of the directed edge.
+	 */
 	public int getVertexTo() {
 		return vertexTo;
 	}
+	/**
+	 * @return - the number of black points.
+	 */
 	public int getNumOfBP() {
 		return NumOfBP;
 	}
+	/**
+	 * @param vertexFrom - set the tail vertex of the directed edge.
+	 */
 	public void setVertexFrom(int vertexFrom) {
 		this.vertexFrom = vertexFrom;
 	}
+	/**
+	 * @param vertexTo - set the head vertex of the directed edge.
+	 */
 	public void setVertexTo(int vertexTo) {
 		this.vertexTo = vertexTo;
 	}
+	/**
+	 * @param numOfBP - set the number of black points.
+	 */
 	public void setNumOfBP(int numOfBP) {
 		NumOfBP = numOfBP;
 	}
+	/**
+	 * @return - the number of tests from the test file.
+	 */
 	public int getNumOftests() {
 		return NumOftests;
 	}
+	/**
+	 * @param NumOftests - set the number of test from the test file.
+	 */
 	public void setNumOftests(int NumOftests) {
 		this.NumOftests = NumOftests;
 	}
+	/**
+	 * @return - the array with the black points.
+	 */
 	public int[] getArrayOfBP() {
 		return ArrayOfBP;
 	}
@@ -103,11 +121,9 @@ public class TestAlgo {
 
 		}
 		this.end = System.currentTimeMillis();
-		System.out.println("Selection Sort time = " + (this.end-this.start)/1000. + " seconds");
+		System.out.println("Run time = " + (this.end-this.start)/1000. + " seconds");
 		this.outStream.close();
 	}
-	
-
 	/**
 	 * This function running the Dijkstra algorithm.
 	 */
@@ -134,8 +150,7 @@ public class TestAlgo {
 	 * This function printing the final answer to the AnsFile file.
 	 */
 	private void PrintAnsToFile(){
-		
-		
+	
 	    if (this.New_G_algo.hasPathTo(this.getVertexTo()) && this.New_G_algo.distTo(this.getVertexTo()) < Double.MAX_VALUE ) {
 			outStream.print(this.New_G_algo.distTo(this.getVertexTo()));
 		}
@@ -143,7 +158,6 @@ public class TestAlgo {
 			outStream.print("inf");
 		}
 		outStream.print("\n");
-
 	}
 }
 

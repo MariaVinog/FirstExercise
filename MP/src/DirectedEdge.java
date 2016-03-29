@@ -67,13 +67,16 @@ public class DirectedEdge {
     public double weight() {
         return weight;
     }
-    
-    //*******************************
-    public void Setweight(double x ) {
+    //************************************************************
+    /**
+     * Function that we added.
+     * The function allows to set the weight of the directed edge.
+     * @param x - the weight to set.
+     */
+    public void Setweight(double x) {
     	weight = x ;
     }
-    //******************************
-
+    //************************************************************
     /**
      * Returns a string representation of the directed edge.
      * @return a string representation of the directed edge
