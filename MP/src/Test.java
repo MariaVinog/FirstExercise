@@ -160,7 +160,7 @@ public class Test {
 	public void Test_mediumEWD_test6() {
 
 		String TestFile = "test6.txt";
-		String AnsFile = "AswerFile1.txt";
+		String AnsFile = "AnswerFile1.txt";
 		String GraphFile = "mediumEWD.txt";
 
 		TestAlgo new_test = new TestAlgo(TestFile,GraphFile,AnsFile);
@@ -172,7 +172,7 @@ public class Test {
 	public void Test_largeEWD_test6() {
 
 		String TestFile = "test6.txt";
-		String AnsFile = "AswerFile2.txt";
+		String AnsFile = "AnswerFile2.txt";
 		String GraphFile = "largeEWD.txt";
 
 		TestAlgo new_test = new TestAlgo(TestFile,GraphFile,AnsFile);
