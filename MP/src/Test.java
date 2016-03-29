@@ -154,7 +154,31 @@ public class Test {
 
 		assertTrue(CompareFiles(ToTest , Solution_file));
 	}
+	//******************Saed tests.****************************************
+	@org.junit.Test
+	//Test of mediumEWD with test6.
+	public void Test_mediumEWD_test6() {
 
+		String TestFile = "test6.txt";
+		String AnsFile = "AswerFile1.txt";
+		String GraphFile = "mediumEWD.txt";
+
+		TestAlgo new_test = new TestAlgo(TestFile,GraphFile,AnsFile);
+		new_test.RunFile();
+	}
+	
+	@org.junit.Test
+	//Test of largeEWD with test6.
+	public void Test_largeEWD_test6() {
+
+		String TestFile = "test6.txt";
+		String AnsFile = "AswerFile2.txt";
+		String GraphFile = "largeEWD.txt";
+
+		TestAlgo new_test = new TestAlgo(TestFile,GraphFile,AnsFile);
+		new_test.RunFile();
+	}
+	//******************saed tests.****************************************
 	@org.junit.Test
 	//Triangle inequality: 6 -> 0 + 6 -> 2 >= 0 -> 2
 	public void TriangleInequality1() {
@@ -201,13 +225,13 @@ public class Test {
 	public static boolean CompareDoubles(double d1 , double d2){
 
 		int answer = Double.compare(d1, d2);
-		
+
 		if(answer < 0) {
 			return false;
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Function that compares two files.
 	 * @param First - first file.
