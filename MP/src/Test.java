@@ -136,6 +136,23 @@ public class Test {
 
 		assertTrue(CompareFiles(ToTest , Solution_file));
 	}
+	
+	@org.junit.Test
+	//Test of tinyEWD2 with test4.
+	public void Test_tinyEWD3_test5() {
+
+		OurIn Solution_file = new OurIn("Solution_test5.txt_tinyEWD3.txt");
+		String TestFile = "test5.txt";
+		String AnsFile = "ans.txt";
+		String GraphFile = "tinyEWD3.txt";
+
+		TestAlgo new_test = new TestAlgo(TestFile,GraphFile,AnsFile);
+		new_test.RunFile();
+
+		OurIn ToTest = new OurIn(AnsFile);
+
+		assertTrue(CompareFiles(ToTest , Solution_file));
+	}
 
 	/**
 	 * Function that compares two files.
