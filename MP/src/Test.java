@@ -138,7 +138,7 @@ public class Test {
 	}
 	
 	@org.junit.Test
-	//Test of tinyEWD2 with test4.
+	//Test of tinyEWD3 with test5.
 	public void Test_tinyEWD3_test5() {
 
 		OurIn Solution_file = new OurIn("Solution_test5.txt_tinyEWD3.txt");
