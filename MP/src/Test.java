@@ -8,7 +8,6 @@ import java.util.Iterator;
  * @author Most601 mariavinogradov aviv
  */
 public class Test {
-	
 	final static double EPSILON = 0.0000001;
 
 	@org.junit.Test
