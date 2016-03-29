@@ -20,7 +20,7 @@ public class TestAlgo {
 	private int[] ArrayOfBP;//Array with black points.
 
 	private OurIn GFile;//File that represents a graph.
-	public  OurIn in;//File to read from , file with tests.
+	private  OurIn in;//File to read from , file with tests.
 	private OurOut outStream;//Answer file , file to print in.
 	
 	private Graph G;//Graph that built from GFile.
