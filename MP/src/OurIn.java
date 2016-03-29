@@ -67,7 +67,6 @@ public final class OurIn {
             throw new IllegalArgumentException(ioe.getMessage());
         }
     }
-
    /**
      * Reads the next token from this input stream, parses it as a <tt>int</tt>,
      * and returns the <tt>int</tt>.
@@ -77,7 +76,6 @@ public final class OurIn {
     public int readInt() {
         return scanner.nextInt();
     }
-
    /**
      * Reads the next token from this input stream, parses it as a <tt>double</tt>,
      * and returns the <tt>double</tt>.
@@ -87,7 +85,6 @@ public final class OurIn {
     public double readDouble() {
         return scanner.nextDouble();
     }
-
     /** 
      * Returns true if this input stream has a next line.
      * Use this method to know whether the

@@ -62,7 +62,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
         for (int i = 0; i <= maxN; i++)
             qp[i] = -1;
     }
-
     /**
      * Returns true if this priority queue is empty.
      *
@@ -72,7 +71,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
     public boolean isEmpty() {
         return N == 0;
     }
-
     /**
      * Is <tt>i</tt> an index on this priority queue?
      *
@@ -85,7 +83,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
         if (i < 0 || i >= maxN) throw new IndexOutOfBoundsException();
         return qp[i] != -1;
     }
-
     /**
      * Returns the number of keys on this priority queue.
      *
@@ -94,7 +91,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
     public int size() {
         return N;
     }
-
     /**
      * Associates key with index <tt>i</tt>.
      *
@@ -113,7 +109,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
         keys[i] = key;
         swim(N);
     }
-
     /**
      * Returns an index associated with a minimum key.
      *
@@ -124,7 +119,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
         if (N == 0) throw new NoSuchElementException("Priority queue underflow");
         return pq[1];
     }
-
     /**
      * Returns a minimum key.
      *
@@ -135,7 +129,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
         if (N == 0) throw new NoSuchElementException("Priority queue underflow");
         return keys[pq[1]];
     }
-
     /**
      * Removes a minimum key and returns its associated index.
      * @return an index associated with a minimum key
@@ -152,7 +145,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
         pq[N+1] = -1;        // not needed
         return min;
     }
-
     /**
      * Returns the key associated with index <tt>i</tt>.
      *
@@ -166,7 +158,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
         if (!contains(i)) throw new NoSuchElementException("index is not in the priority queue");
         else return keys[i];
     }
-
     /**
      * Change the key associated with index <tt>i</tt> to the specified value.
      *
@@ -182,7 +173,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
         swim(qp[i]);
         sink(qp[i]);
     }
-
     /**
      * Change the key associated with index <tt>i</tt> to the specified value.
      *
@@ -194,7 +184,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
     public void change(int i, Key key) {
         changeKey(i, key);
     }
-
     /**
      * Decrease the key associated with index <tt>i</tt> to the specified value.
      *
@@ -212,7 +201,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
         keys[i] = key;
         swim(qp[i]);
     }
-
     /**
      * Increase the key associated with index <tt>i</tt> to the specified value.
      *
@@ -230,7 +218,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
         keys[i] = key;
         sink(qp[i]);
     }
-
     /**
      * Remove the key associated with index <tt>i</tt>.
      *
@@ -248,8 +235,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
         keys[i] = null;
         qp[i] = -1;
     }
-
-
    /***************************************************************************
     * General helper functions.
     ***************************************************************************/
@@ -264,8 +249,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
         qp[pq[i]] = i;
         qp[pq[j]] = j;
     }
-
-
    /***************************************************************************
     * Heap helper functions.
     ***************************************************************************/
@@ -275,7 +258,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
             k = k/2;
         }
     }
-
     private void sink(int k) {
         while (2*k <= N) {
             int j = 2*k;
@@ -285,8 +267,6 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
             k = j;
         }
     }
-
-
    /***************************************************************************
     * Iterators.
     ***************************************************************************/

@@ -46,7 +46,6 @@ public class OurOut {
 			e.printStackTrace();
 		}
 	}
-
 	/**
 	 * Closes the output stream.
 	 */
